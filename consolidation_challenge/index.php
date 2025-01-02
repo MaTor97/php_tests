@@ -81,8 +81,8 @@
         echo "<h2>Excuse Note</h2>";
         echo "<p>Dear Professor $teacher_name,</p>";
         echo "<p>We hope this message finds you well.<br><br> Unfortunately, our $child_pronoun, $child_name, will not be able to attend your class on $date due to $absence_reason.</p>";
-        echo "<p>We sincerely apologize for any inconvenience caused and thank you for your understanding.</p>";
-        echo "<p>Best regards,<br>The $child_name Family</p>";
+        echo "<p>We sincerely apologize for any inconvenience caused and thank you for your understanding.</p><br>";
+        echo "<p>Best regards,<br><br>The $child_name Family</p>";
     }
     ?>
     </main>
