@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absence Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="desole.png">
 </head>
 <body>
+    <header>
+        <h1>Excuses Generator</h1>
+    </header>
     <form action="" method="get">
         <label for="date">Absence date: </label>
         <input type="date" name="date" id="date" required>
@@ -16,11 +21,14 @@
         <br>
 
         <label>Choose your gender:</label>
-        <input type="radio" id="male" name="gender" value="male" required>
-        <label for="male">Male</label>
+        <br>
+        <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
 
-        <input type="radio" id="female" name="gender" value="female" required>
-        <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+        </div>
         <br>
 
         <label for="nameOfTeacher">Name of the teacher: </label>
@@ -53,7 +61,7 @@
 
         <input type="submit" value="Submit">
     </form>
-
+    <main>
     <?php
     if (
         isset($_GET["date"], 
@@ -70,12 +78,13 @@
 
         $child_pronoun = $child_gender === 'male' ? "son" : "daughter";
 
-        echo "<p>Excuse Note:</p>";
+        echo "<h2>Excuse Note</h2>";
         echo "<p>Dear Professor $teacher_name,</p>";
         echo "<p>We hope this message finds you well.<br><br> Unfortunately, our $child_pronoun, $child_name, will not be able to attend your class on $date due to $absence_reason.</p>";
         echo "<p>We sincerely apologize for any inconvenience caused and thank you for your understanding.</p>";
         echo "<p>Best regards,<br>The $child_name Family</p>";
     }
     ?>
+    </main>
 </body>
 </html>
